@@ -1,0 +1,37 @@
+name = "sdl3"
+repo = "https://github.com/libsdl-org/SDL/zipball/main"
+repo_type = "zip"
+
+# For build commands:
+# $FPATH - path passed in by the calling program
+# $NAME - name field above
+
+# TODO - platform specific behaviors
+
+[[build_commands]]
+command = "cmake"
+hint = "Configuring SDL settings..."
+args = [
+    "-S",
+    "$FPATH/$NAME/temp",
+    "-B",
+    "$FPATH/$NAME/temp/build"
+]
+
+[[build_commands]]
+command = "cmake"
+hint = "Building SDL object files..."
+args = [
+    "--build",
+    "$FPATH/$NAME/temp/build"
+]
+
+[[build_commands]]
+command = "cmake"
+hint = "Installing SDL libraries and headers..."
+args = [
+    "--install",
+    "$FPATH/$NAME/temp/build",
+    "--prefix",
+    "$FPATH"
+]
