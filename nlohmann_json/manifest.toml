@@ -1,4 +1,3 @@
 name = "nlohmann"
-file_name = "json.hpp"
 repo = "https://raw.githubusercontent.com/nlohmann/json/refs/heads/develop/single_include/nlohmann/json.hpp"
 repo_type = "singleheader"
